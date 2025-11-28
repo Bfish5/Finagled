@@ -1,0 +1,976 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Finesse Web Solutions | Build Trust. Look Professional. Grow Your Business.</title>
+  <style>
+    :root {
+      --primary: #1f64ff;
+      --primary-dark: #0f3ba5;
+      --accent: #35c7ff;
+      --bg-light: #f4f7fc;
+      --bg-dark: #061124;
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --card-bg: #ffffff;
+      --border-soft: #e2e8f0;
+      --radius-lg: 18px;
+      --radius-md: 10px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.18);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+    }
+
+    header {
+      background: radial-gradient(circle at top left, #1f64ff, #061124);
+      color: #ffffff;
+      padding-bottom: 3rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.2rem 1.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-img {
+      width: 46px;
+      height: 46px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.4);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text span:first-child {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: 0.9rem;
+      text-transform: uppercase;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.8rem;
+      opacity: 0.8;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.95rem;
+    }
+
+    nav a {
+      opacity: 0.85;
+    }
+
+    nav a:hover {
+      opacity: 1;
+    }
+
+    .nav-cta {
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--primary-dark);
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 25px rgba(15, 23, 42, 0.3);
+    }
+
+    .hero {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem 0;
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 2.5rem;
+      align-items: center;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.35rem 0.8rem;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.6);
+      font-size: 0.75rem;
+      margin-bottom: 1.1rem;
+      background: rgba(15, 23, 42, 0.4);
+    }
+
+    .badge-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 999px;
+      background: #22c55e;
+      box-shadow: 0 0 0 5px rgba(34, 197, 94, 0.35);
+    }
+
+    .hero h1 {
+      font-size: clamp(2.1rem, 3.1vw + 1rem, 3.1rem);
+      line-height: 1.1;
+      margin-bottom: 1rem;
+    }
+
+    .hero h1 span {
+      color: #e5f0ff;
+    }
+
+    .hero-tagline {
+      font-size: 0.98rem;
+      opacity: 0.9;
+      margin-bottom: 1.2rem;
+    }
+
+    .hero-bullets {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.6rem 1.5rem;
+      margin-bottom: 1.6rem;
+      font-size: 0.9rem;
+    }
+
+    .hero-bullets span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.4rem;
+    }
+
+    .hero-bullets span::before {
+      content: "✓";
+      font-size: 0.9rem;
+      color: #bbf7d0;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.9rem;
+      align-items: center;
+      margin-bottom: 1.2rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.4rem;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      background: #ffffff;
+      color: var(--primary-dark);
+      font-weight: 600;
+      font-size: 0.95rem;
+      box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
+    }
+
+    .btn-primary span {
+      font-size: 1rem;
+    }
+
+    .btn-ghost {
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      padding: 0.75rem 1.3rem;
+      font-size: 0.88rem;
+      opacity: 0.9;
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      opacity: 0.85;
+    }
+
+    .hero-right {
+      background: rgba(15, 23, 42, 0.65);
+      border-radius: 24px;
+      padding: 1.2rem 1.2rem 1.4rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .hero-card {
+      background: #ffffff;
+      border-radius: 18px;
+      padding: 1.1rem 1.1rem 1.3rem;
+      color: #0f172a;
+    }
+
+    .hero-card-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      margin-bottom: 0.8rem;
+    }
+
+    .hero-card-title {
+      font-size: 0.9rem;
+      font-weight: 600;
+    }
+
+    .hero-chip {
+      font-size: 0.7rem;
+      padding: 0.2rem 0.6rem;
+      border-radius: 999px;
+      background: rgba(37, 99, 235, 0.08);
+      color: #1d4ed8;
+      border: 1px solid rgba(191, 219, 254, 0.8);
+    }
+
+    .mockup-window {
+      border-radius: 12px;
+      border: 1px solid var(--border-soft);
+      overflow: hidden;
+      margin-bottom: 0.7rem;
+    }
+
+    .mockup-bar {
+      display: flex;
+      align-items: center;
+      gap: 0.25rem;
+      padding: 0.35rem 0.6rem;
+      background: #f1f5f9;
+    }
+
+    .mockup-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 999px;
+      background: #cbd5f5;
+    }
+
+    .mockup-body {
+      padding: 0.9rem;
+      background: #ffffff;
+    }
+
+    .mockup-hero {
+      display: flex;
+      flex-direction: column;
+      gap: 0.4rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .mockup-title {
+      width: 65%;
+      height: 12px;
+      border-radius: 999px;
+      background: #dbeafe;
+    }
+
+    .mockup-sub {
+      width: 75%;
+      height: 8px;
+      border-radius: 999px;
+      background: #e5e7eb;
+    }
+
+    .mockup-cta {
+      width: 34%;
+      height: 26px;
+      border-radius: 999px;
+      background: #1d4ed8;
+      margin-top: 0.3rem;
+    }
+
+    .mockup-footer {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .mockup-box {
+      flex: 1;
+      height: 46px;
+      border-radius: 10px;
+      background: #f3f4f6;
+    }
+
+    .hero-card-footer {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      font-size: 0.8rem;
+      margin-top: 0.4rem;
+    }
+
+    .hero-price {
+      font-weight: 700;
+      font-size: 1rem;
+    }
+
+    .hero-price span {
+      font-size: 0.8rem;
+      font-weight: 500;
+      color: var(--text-muted);
+    }
+
+    .trust-row {
+      display: flex;
+      gap: 1rem;
+      margin-top: 0.9rem;
+      font-size: 0.75rem;
+      align-items: center;
+      color: #e5e7eb;
+      opacity: 0.9;
+    }
+
+    .trust-row span {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+    }
+
+    .trust-row span::before {
+      content: "★";
+      font-size: 0.75rem;
+      color: #facc15;
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 2.8rem 1.5rem 3.5rem;
+    }
+
+    .section {
+      margin-bottom: 3rem;
+    }
+
+    .section-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 1.6rem;
+    }
+
+    .section-title {
+      font-size: 1.4rem;
+      font-weight: 700;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      max-width: 420px;
+    }
+
+    .grid-3 {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.5rem;
+    }
+
+    .card {
+      background: var(--card-bg);
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem 1.5rem;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .card-tag {
+      font-size: 0.74rem;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: #1d4ed8;
+      font-weight: 600;
+      margin-bottom: 0.8rem;
+    }
+
+    .card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .card ul {
+      list-style: none;
+      font-size: 0.86rem;
+      color: var(--text-main);
+    }
+
+    .card ul li {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .card ul li::before {
+      content: "•";
+      color: var(--primary);
+    }
+
+    .process {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1.3rem;
+    }
+
+    .step {
+      background: #0f172a;
+      color: #e5e7eb;
+      border-radius: var(--radius-lg);
+      padding: 1.3rem 1.2rem 1.4rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .step::after {
+      content: "";
+      position: absolute;
+      inset: auto -20%;
+      top: -40%;
+      height: 70%;
+      background: radial-gradient(
+        circle at top,
+        rgba(59, 130, 246, 0.4),
+        transparent
+      );
+      opacity: 0.4;
+      pointer-events: none;
+    }
+
+    .step-number {
+      width: 26px;
+      height: 26px;
+      border-radius: 999px;
+      border: 1px solid rgba(148, 163, 184, 0.7);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.78rem;
+      margin-bottom: 0.7rem;
+      background: rgba(15, 23, 42, 0.8);
+      z-index: 1;
+      position: relative;
+    }
+
+    .step h3 {
+      font-size: 0.98rem;
+      margin-bottom: 0.4rem;
+      position: relative;
+      z-index: 1;
+    }
+
+    .step p {
+      font-size: 0.85rem;
+      color: #cbd5f5;
+      position: relative;
+      z-index: 1;
+    }
+
+    .offer {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .offer-highlight {
+      font-size: 1.05rem;
+      font-weight: 600;
+      margin-bottom: 0.6rem;
+    }
+
+    .offer ul {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+    }
+
+    .offer li {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .offer li::before {
+      content: "✓";
+      color: #16a34a;
+      margin-top: 0.1rem;
+    }
+
+    .offer-callout {
+      font-size: 0.83rem;
+      color: var(--text-muted);
+    }
+
+    .offer-card {
+      background: #0b1120;
+      color: #e5e7eb;
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem 1.6rem;
+      box-shadow: var(--shadow-soft);
+    }
+
+    .offer-pill {
+      font-size: 0.7rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #a5b4fc;
+      margin-bottom: 0.4rem;
+    }
+
+    .offer-card h3 {
+      font-size: 1.1rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .price-row {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .price-row span:first-child {
+      font-size: 1.6rem;
+      font-weight: 700;
+    }
+
+    .price-row span:last-child {
+      font-size: 0.9rem;
+      color: #9ca3af;
+    }
+
+    .offer-line {
+      font-size: 0.86rem;
+      color: #cbd5f5;
+      margin-bottom: 0.25rem;
+    }
+
+    .offer-card .btn-primary {
+      background: #1d4ed8;
+      color: #eff6ff;
+      width: 100%;
+      justify-content: center;
+      box-shadow: 0 18px 40px rgba(37, 99, 235, 0.5);
+      margin-top: 0.9rem;
+    }
+
+    .offer-footnote {
+      font-size: 0.78rem;
+      color: #9ca3af;
+      margin-top: 0.6rem;
+      text-align: center;
+    }
+
+    .gallery-placeholder {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 0.9rem;
+    }
+
+    .gallery-item {
+      background: #e5edff;
+      border-radius: var(--radius-md);
+      border: 1px dashed #93c5fd;
+      padding: 0.65rem;
+      font-size: 0.78rem;
+      color: #1d4ed8;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+
+    .gallery-box {
+      flex: 1;
+      border-radius: 8px;
+      background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+      opacity: 0.7;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 1.5rem 1.5rem 2rem;
+      text-align: center;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    footer a {
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+
+    @media (max-width: 840px) {
+      .hero,
+      .offer {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .hero-right {
+        order: -1;
+        margin-top: 1.3rem;
+      }
+
+      .grid-3,
+      .process,
+      .gallery-placeholder {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      .section-header {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .hero-actions {
+        flex-direction: column;
+        align-items: stretch;
+      }
+
+      .btn-primary,
+      .btn-ghost {
+        width: 100%;
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo-area">
+        <div class="logo-img">
+          <!-- LOGO PLACEHOLDER:
+               Replace the img below with your actual logo file, e.g. /images/finesse-logo.png -->
+          <img src="logo-placeholder.png" alt="Finesse Web Solutions logo placeholder" />
+        </div>
+        <div class="brand-text">
+          <span>Finesse Web Solutions</span>
+          <span>Professional websites for small businesses</span>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="services.html">Package</a></li>
+          <li><a href="contact.html">About &amp; Contact</a></li>
+          <li>
+            <a class="nav-cta" href="tel:14437972249">
+              Book a Free Call
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+
+    <section class="hero">
+      <div>
+        <div class="badge">
+          <span class="badge-dot"></span>
+          Launch your website in just 1 day
+        </div>
+        <h1>
+          Build Trust. Look Professional.<br />
+          <span>Grow Your Business.</span>
+        </h1>
+        <p class="hero-tagline">
+          Finesse Web Solutions creates clean, professional websites for small businesses across the U.S.
+        </p>
+
+        <div class="hero-bullets">
+          <span>Improve your online presence</span>
+          <span>Grow your customer base</span>
+          <span>Gain more leads</span>
+          <span>Look more professional</span>
+        </div>
+
+        <div class="hero-actions">
+          <a class="btn-primary" href="tel:14437972249">
+            <span>Book a Free Call Now</span>
+            <span>📞</span>
+          </a>
+          <a class="btn-ghost" href="services.html">
+            See what’s included
+          </a>
+        </div>
+        <p class="hero-note">
+          3-page website &middot; Free hosting forever &middot; Flat $1,000 &mdash; no monthly fee.
+        </p>
+      </div>
+
+      <div class="hero-right">
+        <div class="hero-card">
+          <div class="hero-card-header">
+            <div class="hero-card-title">Sample small-business website</div>
+            <div class="hero-chip">Demo design</div>
+          </div>
+          <div class="mockup-window">
+            <div class="mockup-bar">
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+              <div class="mockup-dot"></div>
+            </div>
+            <div class="mockup-body">
+              <div class="mockup-hero">
+                <div class="mockup-title"></div>
+                <div class="mockup-sub"></div>
+                <div class="mockup-sub" style="width: 55%"></div>
+                <div class="mockup-cta"></div>
+              </div>
+              <div class="mockup-footer">
+                <div class="mockup-box"></div>
+                <div class="mockup-box"></div>
+              </div>
+            </div>
+          </div>
+          <div class="hero-card-footer">
+            <div>
+              <div class="hero-price">$1,000 <span>/ one-time</span></div>
+              <div style="font-size: 0.78rem; color: var(--text-muted);">
+                3 pages &middot; Free hosting &middot; No monthly fee
+              </div>
+            </div>
+            <div style="font-size: 0.78rem; color: var(--text-muted); text-align:right;">
+              1-day launch<br />+ 1 revision included
+            </div>
+          </div>
+        </div>
+
+        <div class="trust-row">
+          <span>Perfect for local service businesses</span>
+          <span>U.S. small business focused</span>
+        </div>
+      </div>
+    </section>
+  </header>
+
+  <main>
+    <!-- HOW IT WORKS -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">A simple 1-day process</h2>
+        <p class="section-sub">
+          No tech jargon, no endless back-and-forth. We follow a clear, friendly process that gets your website live quickly.
+        </p>
+      </div>
+      <div class="process">
+        <div class="step">
+          <div class="step-number">1</div>
+          <h3>Free discovery call</h3>
+          <p>
+            We hop on a quick call to learn about your business, goals, and what you want on your website.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">2</div>
+          <h3>Design &amp; build</h3>
+          <p>
+            The next day, we meet on Zoom to review your new website, make changes, and polish every page together.
+          </p>
+        </div>
+        <div class="step">
+          <div class="step-number">3</div>
+          <h3>Launch &amp; hosting</h3>
+          <p>
+            Once approved, we publish your site and handle hosting for free&mdash;no monthly fee, ever.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- WHAT YOU GET -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">What you get with Finesse</h2>
+        <p class="section-sub">
+          A professional online presence built specifically for small businesses that want to grow, build trust, and look serious online.
+        </p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="card-tag">Your website</div>
+          <h3>Modern 3-page website</h3>
+          <p>
+            A clean, professional site that’s easy to navigate and works great on phones, tablets, and desktops.
+          </p>
+          <ul>
+            <li>Homepage focused on your main offer</li>
+            <li>Services or menu page for what you do</li>
+            <li>About &amp; contact details so people can reach you</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">Hosting</div>
+          <h3>Free hosting forever</h3>
+          <p>
+            Your site stays online without you paying a monthly fee. You focus on your business; we handle the tech.
+          </p>
+          <ul>
+            <li>No surprise charges or renewals</li>
+            <li>Professional domain setup guidance</li>
+            <li>Fast, reliable hosting for your site</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <div class="card-tag">Support</div>
+          <h3>1 revision round</h3>
+          <p>
+            After launch, we include one round of revisions so you can fine-tune wording or visuals.
+          </p>
+          <ul>
+            <li>Adjust wording or images</li>
+            <li>Small layout tweaks</li>
+            <li>Guidance on how to use your new site</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- OFFER + SAMPLE IMAGES -->
+    <section class="section">
+      <div class="offer">
+        <div>
+          <div class="section-header" style="margin-bottom: 1rem;">
+            <h2 class="section-title">A clear, flat $1,000 package</h2>
+          </div>
+          <p class="offer-highlight">
+            One simple package designed for small businesses that want a professional website without ongoing costs.
+          </p>
+          <ul>
+            <li>3-page custom website built around your business.</li>
+            <li>Launch in just 1 day after your initial call.</li>
+            <li>Free hosting forever &mdash; no monthly fee.</li>
+            <li>Mobile-friendly and easy to understand.</li>
+            <li>1 round of revisions included.</li>
+          </ul>
+          <p class="offer-callout">
+            You bring your business info, photos, and details. We turn it into a site that helps you gain trust, leads, and customers.
+          </p>
+        </div>
+
+        <aside class="offer-card">
+          <div class="offer-pill">All-inclusive package</div>
+          <h3>Professional website for small businesses</h3>
+          <div class="price-row">
+            <span>$1,000</span>
+            <span>one-time payment via Venmo</span>
+          </div>
+          <p class="offer-line">✔ 3 pages built around your goals</p>
+          <p class="offer-line">✔ Free hosting &mdash; no monthly fees</p>
+          <p class="offer-line">✔ Launch in just 1 day</p>
+          <p class="offer-line">✔ 1 revision round</p>
+          <p class="offer-line">✔ Perfect for U.S. small businesses</p>
+
+          <a class="btn-primary" href="tel:14437972249">
+            Book a Free Call Now
+          </a>
+
+          <p class="offer-footnote">
+            You’ll speak directly with our small team to see if Finesse Web Solutions is a good fit for your business.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <!-- SAMPLE IMAGE PLACEHOLDERS -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">Sample designs we can create</h2>
+        <p class="section-sub">
+          These are demo examples only. You can replace them with screenshots of actual client sites once you have them.
+        </p>
+      </div>
+
+      <div class="gallery-placeholder">
+        <div class="gallery-item">
+          <!-- IMAGE PLACEHOLDER:
+               Replace with a screenshot of your demo website for a local service business. -->
+          <div class="gallery-box"></div>
+          <span>Sample local service website</span>
+        </div>
+        <div class="gallery-item">
+          <!-- IMAGE PLACEHOLDER:
+               Replace with a screenshot of a simple restaurant / food business demo site. -->
+          <div class="gallery-box"></div>
+          <span>Sample restaurant / food website</span>
+        </div>
+        <div class="gallery-item">
+          <!-- IMAGE PLACEHOLDER:
+               Replace with a screenshot of a salon / personal care business demo site. -->
+          <div class="gallery-box"></div>
+          <span>Sample salon / personal care website</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Finesse Web Solutions. All rights reserved.
+    &middot;
+    <a href="tel:14437972249">Call to book your free discovery call.</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
