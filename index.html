@@ -10,7 +10,7 @@
       --primary-dark: #0f3ba5;
       --accent: #35c7ff;
       --bg-light: #f4f7fc;
-      --bg-dark: #061124;
+      --bg-dark: #020617;
       --text-main: #0f172a;
       --text-muted: #6b7280;
       --card-bg: #ffffff;
@@ -45,16 +45,16 @@
     }
 
     header {
-      background: radial-gradient(circle at top left, #1f64ff, #061124);
+      background: radial-gradient(circle at top left, #1f64ff, #020617);
       color: #ffffff;
-      padding-bottom: 3rem;
+      padding-bottom: 2.4rem;
       box-shadow: var(--shadow-soft);
     }
 
     .nav {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 1.2rem 1.5rem;
+      padding: 1.1rem 1.5rem;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -81,8 +81,12 @@
     .logo-img img {
       width: 100%;
       height: 100%;
-      object-fit: cover;
+      object-fit: contain;
     }
+
+    /* Replace the img above with your real logo file:
+       <img src="images/finesse-logo.png" alt="Finesse Web Solutions logo" />
+    */
 
     .brand-text {
       display: flex;
@@ -98,7 +102,7 @@
 
     .brand-text span:last-child {
       font-size: 0.8rem;
-      opacity: 0.8;
+      opacity: 0.85;
     }
 
     nav ul {
@@ -130,10 +134,10 @@
     .hero {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 2rem 1.5rem 0;
+      padding: 1.8rem 1.5rem 0;
       display: grid;
       grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
-      gap: 2.5rem;
+      gap: 2.3rem;
       align-items: center;
     }
 
@@ -145,7 +149,7 @@
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.6);
       font-size: 0.75rem;
-      margin-bottom: 1.1rem;
+      margin-bottom: 1rem;
       background: rgba(15, 23, 42, 0.4);
     }
 
@@ -158,9 +162,9 @@
     }
 
     .hero h1 {
-      font-size: clamp(2.1rem, 3.1vw + 1rem, 3.1rem);
+      font-size: clamp(2.1rem, 3vw + 1rem, 3rem);
       line-height: 1.1;
-      margin-bottom: 1rem;
+      margin-bottom: 0.9rem;
     }
 
     .hero h1 span {
@@ -176,8 +180,8 @@
     .hero-bullets {
       display: grid;
       grid-template-columns: repeat(2, minmax(0, 1fr));
-      gap: 0.6rem 1.5rem;
-      margin-bottom: 1.6rem;
+      gap: 0.6rem 1.4rem;
+      margin-bottom: 1.4rem;
       font-size: 0.9rem;
     }
 
@@ -198,7 +202,7 @@
       flex-wrap: wrap;
       gap: 0.9rem;
       align-items: center;
-      margin-bottom: 1.2rem;
+      margin-bottom: 1rem;
     }
 
     .btn-primary {
@@ -215,16 +219,14 @@
       box-shadow: 0 18px 40px rgba(15, 23, 42, 0.35);
     }
 
-    .btn-primary span {
-      font-size: 1rem;
-    }
-
     .btn-ghost {
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.7);
       padding: 0.75rem 1.3rem;
       font-size: 0.88rem;
       opacity: 0.9;
+      background: transparent;
+      color: #e5e7eb;
     }
 
     .hero-note {
@@ -272,67 +274,16 @@
       border: 1px solid var(--border-soft);
       overflow: hidden;
       margin-bottom: 0.7rem;
-    }
-
-    .mockup-bar {
-      display: flex;
-      align-items: center;
-      gap: 0.25rem;
-      padding: 0.35rem 0.6rem;
       background: #f1f5f9;
     }
 
-    .mockup-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 999px;
-      background: #cbd5f5;
-    }
+    /* DEMO WEBSITE IMAGE PLACEHOLDER:
+       Replace the inner mockup with a real screenshot img of your demo site:
+       <img src="images/demo-website.png" alt="Demo website by Finesse Web Solutions" />
+    */
 
-    .mockup-body {
+    .mockup-inner {
       padding: 0.9rem;
-      background: #ffffff;
-    }
-
-    .mockup-hero {
-      display: flex;
-      flex-direction: column;
-      gap: 0.4rem;
-      margin-bottom: 0.7rem;
-    }
-
-    .mockup-title {
-      width: 65%;
-      height: 12px;
-      border-radius: 999px;
-      background: #dbeafe;
-    }
-
-    .mockup-sub {
-      width: 75%;
-      height: 8px;
-      border-radius: 999px;
-      background: #e5e7eb;
-    }
-
-    .mockup-cta {
-      width: 34%;
-      height: 26px;
-      border-radius: 999px;
-      background: #1d4ed8;
-      margin-top: 0.3rem;
-    }
-
-    .mockup-footer {
-      display: flex;
-      gap: 0.5rem;
-    }
-
-    .mockup-box {
-      flex: 1;
-      height: 46px;
-      border-radius: 10px;
-      background: #f3f4f6;
     }
 
     .hero-card-footer {
@@ -379,76 +330,129 @@
     main {
       max-width: 1120px;
       margin: 0 auto;
-      padding: 2.8rem 1.5rem 3.5rem;
+      padding: 2.6rem 1.5rem 3.4rem;
     }
 
     .section {
-      margin-bottom: 3rem;
+      margin-bottom: 2.7rem;
     }
 
     .section-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: baseline;
-      gap: 1rem;
-      margin-bottom: 1.6rem;
+      margin-bottom: 1.3rem;
     }
 
     .section-title {
       font-size: 1.4rem;
       font-weight: 700;
+      margin-bottom: 0.3rem;
     }
 
     .section-sub {
       font-size: 0.9rem;
       color: var(--text-muted);
-      max-width: 420px;
+      max-width: 620px;
     }
+
+    .mission-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+      gap: 1.6rem;
+    }
+
+    .mission-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem 1.5rem;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.06);
+      font-size: 0.9rem;
+    }
+
+    .mission-card h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .mission-card p {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 0.6rem;
+    }
+
+    .mission-list {
+      list-style: none;
+      margin-top: 0.3rem;
+    }
+
+    .mission-list li {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+      font-size: 0.87rem;
+    }
+
+    .mission-list li::before {
+      content: "✓";
+      color: var(--primary);
+      margin-top: 0.05rem;
+    }
+
+    .about-photo {
+      background: #e5edff;
+      border-radius: var(--radius-md);
+      border: 1px dashed #93c5fd;
+      padding: 0.9rem;
+      font-size: 0.8rem;
+      color: #1d4ed8;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+    }
+
+    .about-photo-box {
+      height: 140px;
+      border-radius: 12px;
+      background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+      opacity: 0.7;
+    }
+
+    /* Replace .about-photo-box with a real photo of your team or workspace later */
 
     .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 1.5rem;
+      gap: 1.4rem;
     }
 
     .card {
       background: var(--card-bg);
       border-radius: var(--radius-lg);
-      padding: 1.4rem 1.3rem 1.5rem;
+      padding: 1.3rem 1.2rem 1.4rem;
       border: 1px solid rgba(226, 232, 240, 0.9);
-      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.06);
-    }
-
-    .card-tag {
-      font-size: 0.74rem;
-      text-transform: uppercase;
-      letter-spacing: 0.08em;
-      color: #1d4ed8;
-      font-weight: 600;
-      margin-bottom: 0.8rem;
+      box-shadow: 0 16px 28px rgba(15, 23, 42, 0.06);
+      font-size: 0.9rem;
     }
 
     .card h3 {
       font-size: 1rem;
-      margin-bottom: 0.45rem;
+      margin-bottom: 0.4rem;
     }
 
     .card p {
-      font-size: 0.9rem;
+      font-size: 0.88rem;
       color: var(--text-muted);
-      margin-bottom: 0.8rem;
+      margin-bottom: 0.5rem;
     }
 
     .card ul {
       list-style: none;
       font-size: 0.86rem;
-      color: var(--text-main);
     }
 
     .card ul li {
       display: flex;
       gap: 0.4rem;
-      margin-bottom: 0.4rem;
+      margin-bottom: 0.35rem;
     }
 
     .card ul li::before {
@@ -466,53 +470,28 @@
       background: #0f172a;
       color: #e5e7eb;
       border-radius: var(--radius-lg);
-      padding: 1.3rem 1.2rem 1.4rem;
+      padding: 1.2rem 1.1rem 1.3rem;
       position: relative;
       overflow: hidden;
-    }
-
-    .step::after {
-      content: "";
-      position: absolute;
-      inset: auto -20%;
-      top: -40%;
-      height: 70%;
-      background: radial-gradient(
-        circle at top,
-        rgba(59, 130, 246, 0.4),
-        transparent
-      );
-      opacity: 0.4;
-      pointer-events: none;
+      font-size: 0.88rem;
     }
 
     .step-number {
-      width: 26px;
-      height: 26px;
+      width: 24px;
+      height: 24px;
       border-radius: 999px;
       border: 1px solid rgba(148, 163, 184, 0.7);
       display: flex;
       align-items: center;
       justify-content: center;
       font-size: 0.78rem;
-      margin-bottom: 0.7rem;
+      margin-bottom: 0.6rem;
       background: rgba(15, 23, 42, 0.8);
-      z-index: 1;
-      position: relative;
     }
 
     .step h3 {
-      font-size: 0.98rem;
-      margin-bottom: 0.4rem;
-      position: relative;
-      z-index: 1;
-    }
-
-    .step p {
-      font-size: 0.85rem;
-      color: #cbd5f5;
-      position: relative;
-      z-index: 1;
+      font-size: 0.96rem;
+      margin-bottom: 0.35rem;
     }
 
     .offer {
@@ -522,34 +501,23 @@
       align-items: center;
     }
 
-    .offer-highlight {
-      font-size: 1.05rem;
-      font-weight: 600;
-      margin-bottom: 0.6rem;
-    }
-
-    .offer ul {
+    .offer-list {
       list-style: none;
       font-size: 0.9rem;
       color: var(--text-muted);
-      margin-bottom: 1rem;
+      margin-top: 0.7rem;
     }
 
-    .offer li {
+    .offer-list li {
       display: flex;
       gap: 0.4rem;
-      margin-bottom: 0.45rem;
+      margin-bottom: 0.4rem;
     }
 
-    .offer li::before {
+    .offer-list li::before {
       content: "✓";
       color: #16a34a;
       margin-top: 0.1rem;
-    }
-
-    .offer-callout {
-      font-size: 0.83rem;
-      color: var(--text-muted);
     }
 
     .offer-card {
@@ -590,12 +558,6 @@
       color: #9ca3af;
     }
 
-    .offer-line {
-      font-size: 0.86rem;
-      color: #cbd5f5;
-      margin-bottom: 0.25rem;
-    }
-
     .offer-card .btn-primary {
       background: #1d4ed8;
       color: #eff6ff;
@@ -612,34 +574,36 @@
       text-align: center;
     }
 
-    .gallery-placeholder {
+    .demo-gallery {
       display: grid;
       grid-template-columns: repeat(3, minmax(0, 1fr));
       gap: 0.9rem;
     }
 
-    .gallery-item {
+    .demo-item {
       background: #e5edff;
       border-radius: var(--radius-md);
       border: 1px dashed #93c5fd;
-      padding: 0.65rem;
-      font-size: 0.78rem;
+      padding: 0.75rem;
+      font-size: 0.8rem;
       color: #1d4ed8;
       display: flex;
       flex-direction: column;
-      gap: 0.35rem;
+      gap: 0.5rem;
     }
 
-    .gallery-box {
-      flex: 1;
-      border-radius: 8px;
+    .demo-box {
+      height: 90px;
+      border-radius: 10px;
       background: linear-gradient(135deg, #1d4ed8, #38bdf8);
       opacity: 0.7;
     }
 
+    /* Replace each .demo-box with real screenshots of demo sites when ready */
+
     footer {
       border-top: 1px solid var(--border-soft);
-      padding: 1.5rem 1.5rem 2rem;
+      padding: 1.6rem 1.5rem 2rem;
       text-align: center;
       font-size: 0.8rem;
       color: var(--text-muted);
@@ -650,26 +614,19 @@
       font-weight: 500;
     }
 
-    @media (max-width: 840px) {
+    @media (max-width: 880px) {
       .hero,
-      .offer {
+      .mission-grid,
+      .grid-3,
+      .process,
+      .offer,
+      .demo-gallery {
         grid-template-columns: minmax(0, 1fr);
       }
 
       .hero-right {
         order: -1;
-        margin-top: 1.3rem;
-      }
-
-      .grid-3,
-      .process,
-      .gallery-placeholder {
-        grid-template-columns: minmax(0, 1fr);
-      }
-
-      .section-header {
-        flex-direction: column;
-        align-items: flex-start;
+        margin-bottom: 1.5rem;
       }
 
       nav ul {
@@ -696,8 +653,7 @@
     <div class="nav">
       <div class="logo-area">
         <div class="logo-img">
-          <!-- LOGO PLACEHOLDER:
-               Replace the img below with your actual logo file, e.g. /images/finesse-logo.png -->
+          <!-- LOGO PLACEHOLDER -->
           <img src="logo-placeholder.png" alt="Finesse Web Solutions logo placeholder" />
         </div>
         <div class="brand-text">
@@ -705,16 +661,13 @@
           <span>Professional websites for small businesses</span>
         </div>
       </div>
-
       <nav>
         <ul>
           <li><a href="index.html">Home</a></li>
-          <li><a href="services.html">Package</a></li>
+          <li><a href="services.html">$1,000 Package</a></li>
           <li><a href="contact.html">About &amp; Contact</a></li>
           <li>
-            <a class="nav-cta" href="tel:14437972249">
-              Book a Free Call
-            </a>
+            <a class="nav-cta" href="tel:14437972249">Book a Free Call</a>
           </li>
         </ul>
       </nav>
@@ -731,233 +684,261 @@
           <span>Grow Your Business.</span>
         </h1>
         <p class="hero-tagline">
-          Finesse Web Solutions creates clean, professional websites for small businesses across the U.S.
+          We create clean, modern websites for small businesses all over the U.S.
+          so you can improve your online presence, gain more leads, and look like
+          the professional you are.
         </p>
 
         <div class="hero-bullets">
           <span>Improve your online presence</span>
           <span>Grow your customer base</span>
           <span>Gain more leads</span>
-          <span>Look more professional</span>
+          <span>Look more professional online</span>
         </div>
 
         <div class="hero-actions">
           <a class="btn-primary" href="tel:14437972249">
-            <span>Book a Free Call Now</span>
-            <span>📞</span>
+            Book a Free Call Now 📞
           </a>
           <a class="btn-ghost" href="services.html">
-            See what’s included
+            See everything you get for $1,000
           </a>
         </div>
+
         <p class="hero-note">
-          3-page website &middot; Free hosting forever &middot; Flat $1,000 &mdash; no monthly fee.
+          3-page website · Free hosting forever · Flat $1,000 · 1 revision included.
         </p>
       </div>
 
       <div class="hero-right">
         <div class="hero-card">
           <div class="hero-card-header">
-            <div class="hero-card-title">Sample small-business website</div>
-            <div class="hero-chip">Demo design</div>
+            <div class="hero-card-title">Demo small-business website</div>
+            <div class="hero-chip">Image placeholder</div>
           </div>
           <div class="mockup-window">
-            <div class="mockup-bar">
-              <div class="mockup-dot"></div>
-              <div class="mockup-dot"></div>
-              <div class="mockup-dot"></div>
-            </div>
-            <div class="mockup-body">
-              <div class="mockup-hero">
-                <div class="mockup-title"></div>
-                <div class="mockup-sub"></div>
-                <div class="mockup-sub" style="width: 55%"></div>
-                <div class="mockup-cta"></div>
-              </div>
-              <div class="mockup-footer">
-                <div class="mockup-box"></div>
-                <div class="mockup-box"></div>
-              </div>
+            <div class="mockup-inner">
+              <!-- DEMO IMAGE PLACEHOLDER:
+                   Replace this text with a screenshot of your demo website inside an <img>. -->
+              This is where you’ll drop a screenshot of a demo website you build for a random
+              small business (for example: a local service, restaurant, or salon).
             </div>
           </div>
           <div class="hero-card-footer">
             <div>
               <div class="hero-price">$1,000 <span>/ one-time</span></div>
-              <div style="font-size: 0.78rem; color: var(--text-muted);">
-                3 pages &middot; Free hosting &middot; No monthly fee
+              <div style="font-size:0.78rem;color:var(--text-muted);">
+                3 pages · free hosting · no monthly fee
               </div>
             </div>
-            <div style="font-size: 0.78rem; color: var(--text-muted); text-align:right;">
-              1-day launch<br />+ 1 revision included
+            <div style="font-size:0.78rem;color:var(--text-muted);text-align:right;">
+              Built in 1 day<br />+ 1 revision
             </div>
           </div>
         </div>
 
         <div class="trust-row">
-          <span>Perfect for local service businesses</span>
-          <span>U.S. small business focused</span>
+          <span>Perfect for U.S. small businesses</span>
+          <span>No tech headaches, just results</span>
         </div>
       </div>
     </section>
   </header>
 
   <main>
-    <!-- HOW IT WORKS -->
+    <!-- MISSION & GOAL / ABOUT US -->
     <section class="section">
       <div class="section-header">
-        <h2 class="section-title">A simple 1-day process</h2>
+        <h2 class="section-title">Our mission, goal &amp; who we are</h2>
         <p class="section-sub">
-          No tech jargon, no endless back-and-forth. We follow a clear, friendly process that gets your website live quickly.
+          Finesse Web Solutions is a small team dedicated to helping small businesses
+          look professional online without confusing pricing or long timelines.
         </p>
       </div>
+
+      <div class="mission-grid">
+        <article class="mission-card">
+          <h3>Our mission</h3>
+          <p>
+            Our mission is to help small businesses build trust online with
+            simple, high-quality websites that make it easy for customers to say “yes”.
+          </p>
+          <h3>Our goal for every project</h3>
+          <p>
+            Every site we build is designed to:
+          </p>
+          <ul class="mission-list">
+            <li>Make your business look more professional and trustworthy.</li>
+            <li>Clearly explain what you do and who you help.</li>
+            <li>Give visitors a clear way to contact or call you.</li>
+            <li>Launch quickly so you can start using it right away.</li>
+          </ul>
+        </article>
+
+        <aside class="about-photo">
+          <!-- ABOUT-US IMAGE PLACEHOLDER
+               Replace .about-photo-box with a photo of your team or workspace -->
+          <div class="about-photo-box"></div>
+          Add a friendly photo of your team, you working on a laptop,
+          or a clean workspace shot here. This helps visitors see there are
+          real people behind Finesse Web Solutions.
+        </aside>
+      </div>
+    </section>
+
+    <!-- ABOUT OUR TEAM -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">All about Finesse Web Solutions</h2>
+        <p class="section-sub">
+          We’re a small, focused team – not a giant agency. That means you talk directly
+          to the people who design and build your site.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <article class="card">
+          <h3>Small team, big care</h3>
+          <p>
+            You’re never handed off to a random department. The same people who
+            talk with you are the ones building your site.
+          </p>
+          <ul>
+            <li>Clear communication from start to finish.</li>
+            <li>We keep the process friendly and simple.</li>
+            <li>We treat your business like it’s our own.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Built for small businesses</h3>
+          <p>
+            We focus on small businesses all over the U.S. – local services, shops,
+            solo owners, and small teams.
+          </p>
+          <ul>
+            <li>Websites that match how real small businesses work.</li>
+            <li>No unnecessary features or confusing tech.</li>
+            <li>Designed around calls, leads and local customers.</li>
+          </ul>
+        </article>
+
+        <article class="card">
+          <h3>Honest, simple pricing</h3>
+          <p>
+            We don’t stack on hidden fees. You know up front what you’re getting
+            and what it costs.
+          </p>
+          <ul>
+            <li>$1,000 one-time payment via Venmo.</li>
+            <li>Free hosting forever.</li>
+            <li>1 revision round included.</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <!-- PROCESS -->
+    <section class="section">
+      <div class="section-header">
+        <h2 class="section-title">How we work with you</h2>
+        <p class="section-sub">
+          A simple, three-step process that respects your time and gets your website
+          live fast.
+        </p>
+      </div>
+
       <div class="process">
         <div class="step">
           <div class="step-number">1</div>
           <h3>Free discovery call</h3>
           <p>
-            We hop on a quick call to learn about your business, goals, and what you want on your website.
+            We talk about your business, the services you offer, and the kind of
+            clients you want to attract. If it’s a fit, you pay $1,000 via Venmo.
           </p>
         </div>
         <div class="step">
           <div class="step-number">2</div>
           <h3>Design &amp; build</h3>
           <p>
-            The next day, we meet on Zoom to review your new website, make changes, and polish every page together.
+            We design and build your 3-page website. You focus on your business
+            while we handle the tech and layout.
           </p>
         </div>
         <div class="step">
           <div class="step-number">3</div>
-          <h3>Launch &amp; hosting</h3>
+          <h3>Zoom review &amp; launch</h3>
           <p>
-            Once approved, we publish your site and handle hosting for free&mdash;no monthly fee, ever.
+            We meet on Zoom, walk through everything, make your one included
+            revision round, then publish your site live.
           </p>
         </div>
       </div>
     </section>
 
-    <!-- WHAT YOU GET -->
-    <section class="section">
-      <div class="section-header">
-        <h2 class="section-title">What you get with Finesse</h2>
-        <p class="section-sub">
-          A professional online presence built specifically for small businesses that want to grow, build trust, and look serious online.
-        </p>
-      </div>
-      <div class="grid-3">
-        <article class="card">
-          <div class="card-tag">Your website</div>
-          <h3>Modern 3-page website</h3>
-          <p>
-            A clean, professional site that’s easy to navigate and works great on phones, tablets, and desktops.
-          </p>
-          <ul>
-            <li>Homepage focused on your main offer</li>
-            <li>Services or menu page for what you do</li>
-            <li>About &amp; contact details so people can reach you</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <div class="card-tag">Hosting</div>
-          <h3>Free hosting forever</h3>
-          <p>
-            Your site stays online without you paying a monthly fee. You focus on your business; we handle the tech.
-          </p>
-          <ul>
-            <li>No surprise charges or renewals</li>
-            <li>Professional domain setup guidance</li>
-            <li>Fast, reliable hosting for your site</li>
-          </ul>
-        </article>
-
-        <article class="card">
-          <div class="card-tag">Support</div>
-          <h3>1 revision round</h3>
-          <p>
-            After launch, we include one round of revisions so you can fine-tune wording or visuals.
-          </p>
-          <ul>
-            <li>Adjust wording or images</li>
-            <li>Small layout tweaks</li>
-            <li>Guidance on how to use your new site</li>
-          </ul>
-        </article>
-      </div>
-    </section>
-
-    <!-- OFFER + SAMPLE IMAGES -->
+    <!-- OFFER + DEMO PLACEHOLDERS -->
     <section class="section">
       <div class="offer">
         <div>
-          <div class="section-header" style="margin-bottom: 1rem;">
-            <h2 class="section-title">A clear, flat $1,000 package</h2>
+          <div class="section-header" style="margin-bottom: 0.9rem;">
+            <h2 class="section-title">What you get for $1,000</h2>
           </div>
-          <p class="offer-highlight">
-            One simple package designed for small businesses that want a professional website without ongoing costs.
+          <p>
+            One clear package designed to give your business a professional,
+            trustworthy online presence.
           </p>
-          <ul>
-            <li>3-page custom website built around your business.</li>
-            <li>Launch in just 1 day after your initial call.</li>
+          <ul class="offer-list">
+            <li>3 custom pages (Home, Services, About/Contact).</li>
+            <li>Launch in as little as 1 day after your call.</li>
             <li>Free hosting forever &mdash; no monthly fee.</li>
-            <li>Mobile-friendly and easy to understand.</li>
-            <li>1 round of revisions included.</li>
+            <li>1 revision round after launch.</li>
+            <li>Built to help you gain leads and new customers.</li>
           </ul>
-          <p class="offer-callout">
-            You bring your business info, photos, and details. We turn it into a site that helps you gain trust, leads, and customers.
-          </p>
         </div>
 
         <aside class="offer-card">
-          <div class="offer-pill">All-inclusive package</div>
-          <h3>Professional website for small businesses</h3>
+          <div class="offer-pill">All-in-one package</div>
+          <h3>Professional small-business website</h3>
           <div class="price-row">
             <span>$1,000</span>
             <span>one-time payment via Venmo</span>
           </div>
-          <p class="offer-line">✔ 3 pages built around your goals</p>
-          <p class="offer-line">✔ Free hosting &mdash; no monthly fees</p>
-          <p class="offer-line">✔ Launch in just 1 day</p>
-          <p class="offer-line">✔ 1 revision round</p>
-          <p class="offer-line">✔ Perfect for U.S. small businesses</p>
-
-          <a class="btn-primary" href="tel:14437972249">
-            Book a Free Call Now
-          </a>
-
+          <p style="font-size:0.86rem;margin-bottom:0.4rem;">
+            No ongoing monthly fee from us. You get a complete, ready-to-use website.
+          </p>
+          <a class="btn-primary" href="tel:14437972249">Book a Free Call Now</a>
           <p class="offer-footnote">
-            You’ll speak directly with our small team to see if Finesse Web Solutions is a good fit for your business.
+            You’ll speak directly with our small team to see if Finesse Web Solutions
+            is a good match for your business.
           </p>
         </aside>
       </div>
     </section>
 
-    <!-- SAMPLE IMAGE PLACEHOLDERS -->
     <section class="section">
       <div class="section-header">
-        <h2 class="section-title">Sample designs we can create</h2>
+        <h2 class="section-title">Sample demo sites (image placeholders)</h2>
         <p class="section-sub">
-          These are demo examples only. You can replace them with screenshots of actual client sites once you have them.
+          When you build your first demo websites, replace these boxes with
+          screenshots so visitors can see your style.
         </p>
       </div>
 
-      <div class="gallery-placeholder">
-        <div class="gallery-item">
-          <!-- IMAGE PLACEHOLDER:
-               Replace with a screenshot of your demo website for a local service business. -->
-          <div class="gallery-box"></div>
-          <span>Sample local service website</span>
+      <div class="demo-gallery">
+        <div class="demo-item">
+          <div class="demo-box"></div>
+          <!-- Replace with: <img src="images/demo-local-service.png" ...> -->
+          Sample local service website (e.g. plumber, roofer, cleaning).
         </div>
-        <div class="gallery-item">
-          <!-- IMAGE PLACEHOLDER:
-               Replace with a screenshot of a simple restaurant / food business demo site. -->
-          <div class="gallery-box"></div>
-          <span>Sample restaurant / food website</span>
+        <div class="demo-item">
+          <div class="demo-box"></div>
+          <!-- Replace with: <img src="images/demo-restaurant.png" ...> -->
+          Sample restaurant or cafe website.
         </div>
-        <div class="gallery-item">
-          <!-- IMAGE PLACEHOLDER:
-               Replace with a screenshot of a salon / personal care business demo site. -->
-          <div class="gallery-box"></div>
-          <span>Sample salon / personal care website</span>
+        <div class="demo-item">
+          <div class="demo-box"></div>
+          <!-- Replace with: <img src="images/demo-salon.png" ...> -->
+          Sample salon or personal care website.
         </div>
       </div>
     </section>
@@ -966,7 +947,7 @@
   <footer>
     &copy; <span id="year"></span> Finesse Web Solutions. All rights reserved.
     &middot;
-    <a href="tel:14437972249">Call to book your free discovery call.</a>
+    <a href="tel:14437972249">Call (443) 797-2249 to get started.</a>
   </footer>
 
   <script>
