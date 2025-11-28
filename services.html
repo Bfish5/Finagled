@@ -1,0 +1,618 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>$1,000 Website Package | Finesse Web Solutions</title>
+  <style>
+    :root {
+      --primary: #1f64ff;
+      --primary-dark: #0f3ba5;
+      --accent: #35c7ff;
+      --bg-light: #f4f7fc;
+      --bg-dark: #061124;
+      --text-main: #0f172a;
+      --text-muted: #6b7280;
+      --card-bg: #ffffff;
+      --border-soft: #e2e8f0;
+      --radius-lg: 18px;
+      --radius-md: 10px;
+      --shadow-soft: 0 18px 40px rgba(15, 23, 42, 0.18);
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+        sans-serif;
+      background: var(--bg-light);
+      color: var(--text-main);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    header {
+      background: #0b1120;
+      color: #e5e7eb;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.5);
+      margin-bottom: 2.2rem;
+    }
+
+    .nav {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 1.1rem 1.5rem;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: 0.8rem;
+    }
+
+    .logo-img {
+      width: 42px;
+      height: 42px;
+      border-radius: 12px;
+      background: rgba(15, 23, 42, 0.6);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+    }
+
+    .logo-img img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .brand-text {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .brand-text span:first-child {
+      font-weight: 700;
+      letter-spacing: 0.06em;
+      font-size: 0.86rem;
+      text-transform: uppercase;
+    }
+
+    .brand-text span:last-child {
+      font-size: 0.78rem;
+      opacity: 0.8;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      align-items: center;
+      gap: 1.5rem;
+      font-size: 0.94rem;
+    }
+
+    nav a {
+      opacity: 0.85;
+    }
+
+    nav a.active {
+      opacity: 1;
+      font-weight: 600;
+    }
+
+    .nav-cta {
+      padding: 0.6rem 1.2rem;
+      border-radius: 999px;
+      background: #1d4ed8;
+      color: #eff6ff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 10px 26px rgba(37, 99, 235, 0.6);
+    }
+
+    main {
+      max-width: 1120px;
+      margin: 0 auto;
+      padding: 0 1.5rem 3.5rem;
+    }
+
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 1.8rem;
+      margin-bottom: 3rem;
+      align-items: center;
+    }
+
+    .hero-title {
+      font-size: clamp(2rem, 2.5vw + 1rem, 2.6rem);
+      margin-bottom: 0.6rem;
+    }
+
+    .hero-tagline {
+      font-size: 0.98rem;
+      color: var(--text-muted);
+      max-width: 530px;
+      margin-bottom: 0.9rem;
+    }
+
+    .pill {
+      font-size: 0.75rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: #1d4ed8;
+      margin-bottom: 0.5rem;
+      font-weight: 600;
+    }
+
+    .price-highlight {
+      display: flex;
+      align-items: baseline;
+      gap: 0.4rem;
+      margin-bottom: 0.7rem;
+    }
+
+    .price-highlight span:first-child {
+      font-size: 1.85rem;
+      font-weight: 700;
+      color: var(--primary-dark);
+    }
+
+    .price-highlight span:last-child {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+    }
+
+    .hero-list {
+      list-style: none;
+      font-size: 0.9rem;
+      color: var(--text-main);
+      margin-bottom: 1.3rem;
+    }
+
+    .hero-list li {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.45rem;
+    }
+
+    .hero-list li::before {
+      content: "✓";
+      color: #16a34a;
+      margin-top: 0.1rem;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 0.85rem;
+      font-size: 0.86rem;
+    }
+
+    .btn-primary {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 0.3rem;
+      padding: 0.85rem 1.5rem;
+      border-radius: 999px;
+      background: var(--primary);
+      color: #ffffff;
+      font-weight: 600;
+      font-size: 0.9rem;
+      box-shadow: 0 16px 30px rgba(37, 99, 235, 0.5);
+    }
+
+    .btn-secondary {
+      font-size: 0.86rem;
+      padding: 0.7rem 1.2rem;
+      border-radius: 999px;
+      border: 1px solid var(--border-soft);
+      background: #ffffff;
+      color: var(--text-main);
+    }
+
+    .hero-note {
+      font-size: 0.8rem;
+      color: var(--text-muted);
+    }
+
+    .package-card {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem 1.6rem;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      box-shadow: 0 18px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .package-title {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+      font-weight: 600;
+    }
+
+    .package-sub {
+      font-size: 0.86rem;
+      color: var(--text-muted);
+      margin-bottom: 0.8rem;
+    }
+
+    .package-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 0.9rem 1.5rem;
+      font-size: 0.86rem;
+    }
+
+    .package-grid h4 {
+      font-size: 0.9rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .muted {
+      color: var(--text-muted);
+    }
+
+    .divider {
+      height: 1px;
+      background: var(--border-soft);
+      margin: 2.2rem 0;
+    }
+
+    .section-title {
+      font-size: 1.3rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .section-sub {
+      font-size: 0.9rem;
+      color: var(--text-muted);
+      margin-bottom: 1.3rem;
+      max-width: 520px;
+    }
+
+    .comparison {
+      background: #ffffff;
+      border-radius: var(--radius-lg);
+      padding: 1.4rem 1.3rem 1.5rem;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.5rem;
+      font-size: 0.86rem;
+    }
+
+    .comparison h3 {
+      font-size: 1rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .comparison ul {
+      list-style: none;
+    }
+
+    .comparison li {
+      display: flex;
+      gap: 0.4rem;
+      margin-bottom: 0.4rem;
+    }
+
+    .comparison li::before {
+      content: "•";
+      color: var(--primary);
+    }
+
+    .note-box {
+      margin-top: 1rem;
+      font-size: 0.82rem;
+      color: var(--text-muted);
+    }
+
+    .faq-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 1.3rem;
+      font-size: 0.86rem;
+    }
+
+    .faq-item {
+      background: #ffffff;
+      border-radius: var(--radius-md);
+      padding: 1.1rem 1.1rem 1.2rem;
+      border: 1px solid rgba(226, 232, 240, 0.9);
+    }
+
+    .faq-item h3 {
+      font-size: 0.95rem;
+      margin-bottom: 0.3rem;
+    }
+
+    .banner {
+      margin-top: 2.5rem;
+      background: linear-gradient(135deg, #1f64ff, #35c7ff);
+      color: #f9fafb;
+      border-radius: 20px;
+      padding: 1.6rem 1.5rem 1.7rem;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      align-items: center;
+      justify-content: space-between;
+      box-shadow: 0 20px 40px rgba(37, 99, 235, 0.6);
+    }
+
+    .banner h2 {
+      font-size: 1.25rem;
+      margin-bottom: 0.2rem;
+    }
+
+    .banner p {
+      font-size: 0.86rem;
+      opacity: 0.95;
+    }
+
+    .banner a {
+      background: #ffffff;
+      color: #1d4ed8;
+      padding: 0.9rem 1.6rem;
+      border-radius: 999px;
+      font-size: 0.9rem;
+      font-weight: 600;
+      box-shadow: 0 16px 30px rgba(15, 23, 42, 0.35);
+    }
+
+    .sample-image {
+      margin-top: 1.2rem;
+      background: #e5edff;
+      border-radius: var(--radius-md);
+      border: 1px dashed #93c5fd;
+      padding: 0.8rem;
+      font-size: 0.8rem;
+      color: #1d4ed8;
+    }
+
+    .sample-box {
+      height: 110px;
+      border-radius: 10px;
+      background: linear-gradient(135deg, #1d4ed8, #38bdf8);
+      opacity: 0.7;
+      margin-bottom: 0.5rem;
+    }
+
+    footer {
+      border-top: 1px solid var(--border-soft);
+      padding: 1.6rem 1.5rem 2rem;
+      font-size: 0.8rem;
+      color: var(--text-muted);
+      text-align: center;
+    }
+
+    footer a {
+      color: var(--primary-dark);
+      font-weight: 500;
+    }
+
+    @media (max-width: 840px) {
+      .hero,
+      .comparison,
+      .faq-grid {
+        grid-template-columns: minmax(0, 1fr);
+      }
+
+      nav ul {
+        display: none;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="nav">
+      <div class="logo-area">
+        <div class="logo-img">
+          <!-- LOGO PLACEHOLDER:
+               Replace with your logo file. -->
+          <img src="logo-placeholder.png" alt="Finesse Web Solutions logo placeholder" />
+        </div>
+        <div class="brand-text">
+          <span>Finesse Web Solutions</span>
+          <span>Build Trust. Look Professional. Grow Your Business.</span>
+        </div>
+      </div>
+
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a class="active" href="services.html">$1,000 Package</a></li>
+          <li><a href="contact.html">About &amp; Contact</a></li>
+          <li>
+            <a class="nav-cta" href="tel:14437972249">Book a Free Call</a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div>
+        <div class="pill">Flat, simple pricing</div>
+        <h1 class="hero-title">$1,000 for everything you need</h1>
+        <p class="hero-tagline">
+          A professional 3-page website, built in 1 day, with free hosting forever and no monthly fees.
+        </p>
+        <div class="price-highlight">
+          <span>$1,000</span>
+          <span>one-time payment via Venmo</span>
+        </div>
+        <ul class="hero-list">
+          <li>3 custom pages designed specifically for your small business.</li>
+          <li>Launch in just 1 day after your initial call.</li>
+          <li>Free hosting forever &mdash; no monthly fee from us.</li>
+          <li>1 round of revisions after launch.</li>
+        </ul>
+        <div class="hero-actions">
+          <a class="btn-primary" href="tel:14437972249">
+            Book a Free Call Now 📞
+          </a>
+          <a class="btn-secondary" href="index.html">
+            Back to overview
+          </a>
+        </div>
+        <p class="hero-note">
+          On your call, we’ll confirm details, answer questions, and make sure the package is a good fit for your business.
+        </p>
+      </div>
+
+      <aside class="package-card">
+        <div class="package-title">What’s included in your 3 pages</div>
+        <p class="package-sub">
+          You can change names and sections, but this setup works great for most small businesses.
+        </p>
+
+        <div class="package-grid">
+          <div>
+            <h4>1. Home page</h4>
+            <p class="muted">
+              Your main “welcome” page. Clear headline, what you do, why you’re different, and a strong call-to-action.
+            </p>
+          </div>
+          <div>
+            <h4>2. Services / offerings</h4>
+            <p class="muted">
+              Break down your services, pricing style, or menu so visitors quickly see how you can help.
+            </p>
+          </div>
+          <div>
+            <h4>3. About &amp; contact</h4>
+            <p class="muted">
+              Share your story, build trust, and show people exactly how to contact you&mdash;including your phone number.
+            </p>
+          </div>
+          <div>
+            <h4>Mobile friendly</h4>
+            <p class="muted">
+              Designed to look great on phones, tablets, and desktops so your business feels professional everywhere.
+            </p>
+          </div>
+        </div>
+
+        <div class="sample-image">
+          <div class="sample-box"></div>
+          <!-- IMAGE PLACEHOLDER:
+               Replace this entire block with a screenshot of your 3-page demo site layout. -->
+          Example layout preview: Home, Services, and About/Contact sections.
+        </div>
+      </aside>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+      <h2 class="section-title">How Finesse compares to typical website costs</h2>
+      <p class="section-sub">
+        Many small businesses either pay too much every month or end up with a website that never gets finished. Our goal is to keep things simple.
+      </p>
+
+      <div class="comparison">
+        <div>
+          <h3>Typical monthly website plans</h3>
+          <ul>
+            <li>$50&ndash;$200 per month, every month.</li>
+            <li>Confusing upsells, plugins, and add-ons.</li>
+            <li>You still have to build most of the site yourself.</li>
+            <li>Hard to know what’s really included.</li>
+            <li>Sites often sit half-finished for months.</li>
+          </ul>
+        </div>
+        <div>
+          <h3>The Finesse Web Solutions package</h3>
+          <ul>
+            <li>$1,000 one-time payment via Venmo.</li>
+            <li>We design and build the site for you.</li>
+            <li>Launch ready in just 1 day after your call.</li>
+            <li>Free hosting forever &mdash; no monthly fee.</li>
+            <li>1 revision round so everything feels right.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="note-box">
+        <!-- IMAGE PLACEHOLDER IDEA:
+             You can add a small "before & after" screenshot set here once you have real projects. -->
+        In the future, you can show “before &amp; after” screenshots of real clients here to highlight the improvement.
+      </div>
+    </section>
+
+    <div class="divider"></div>
+
+    <section>
+      <h2 class="section-title">Common questions</h2>
+      <p class="section-sub">
+        Here are a few quick answers. You can customize these as you start working with more businesses.
+      </p>
+
+      <div class="faq-grid">
+        <article class="faq-item">
+          <h3>What do you need from me before we start?</h3>
+          <p>
+            On our call, we’ll ask for your business name, what you do, the areas you serve, any photos or logos you have, and how you want people to contact you.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Is the $1,000 really one-time?</h3>
+          <p>
+            Yes. You pay $1,000 via Venmo and that covers your 3-page site, 1-day build, free hosting, and 1 revision round. No monthly fee from us.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>Can I add more pages later?</h3>
+          <p>
+            Yes. We can discuss additional pages as a separate add-on in the future if you want to grow your site as your business grows.
+          </p>
+        </article>
+        <article class="faq-item">
+          <h3>What if I need small changes later?</h3>
+          <p>
+            Your package includes one round of revisions after launch. For any future changes, we can agree on a simple, fair update fee.
+          </p>
+        </article>
+      </div>
+    </section>
+
+    <section class="banner">
+      <div>
+        <h2>Ready to see if this package fits your business?</h2>
+        <p>
+          Book a quick free call and we’ll walk through your goals, answer questions, and outline what your 3-page website could look like.
+        </p>
+      </div>
+      <a href="tel:14437972249">Book a Free Call Now</a>
+    </section>
+  </main>
+
+  <footer>
+    &copy; <span id="year"></span> Finesse Web Solutions. All rights reserved.
+    &middot;
+    <a href="tel:14437972249">Call us to get started.</a>
+  </footer>
+
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
